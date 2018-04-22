@@ -31,11 +31,11 @@
   }
 }
 
-#portal {
-}
+/* #portal {
+} */
 
 .modal {
-  background-color: rgba(0, 0, 0, 0.699);
+  background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   top: 0;
   width: 100%;
@@ -49,6 +49,8 @@
   background-color: black;
   color: white;
   padding: 20px;
+  width: 500px;
+  height: 300px;
 }
 
 .hidden {

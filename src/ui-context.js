@@ -8,9 +8,9 @@ export class UiProvider extends React.Component {
   state = {
     color: "white",
     backgroundColor: "red",
-    margin: "0 200px",
+    // margin: "0 200px",
     modal: false,
-    modal2: true
+    modal2: false
   };
 
   changeTheme = () =>
