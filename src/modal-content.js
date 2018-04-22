@@ -13,7 +13,10 @@ class ModalContent extends Component {
                 onClick={theme.toggleModal}
                 className="modal"
                 style={
-                  theme.state.modal ? { display: "flex" } : { display: "none" }
+                  // theme.state.modal ? { display: "flex" } : { display: "none" }
+                  theme.state.modal
+                    ? { visibility: "visible" }
+                    : { visibility: "hidden" }
                 }
               >
                 <div id="modal-content">
