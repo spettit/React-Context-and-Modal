@@ -8,6 +8,7 @@ import Group from "./group";
 
 import Portal from "./portal";
 import ModalContent from "./modal-content";
+import ModalContent2 from "./second-modal";
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           </div>
           <Portal>
             <ModalContent />
+            <ModalContent2 />
           </Portal>
         </UserProvider>
       </UiProvider>

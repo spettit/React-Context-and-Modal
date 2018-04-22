@@ -14,6 +14,7 @@ const Person = props => {
               <button onClick={user.growAYearOlder}>click</button>
               <button onClick={theme.changeTheme}>theme</button>
               <button onClick={theme.toggleModal}>modal</button>
+              <button onClick={theme.toggleModal2}>modal2</button>
             </React.Fragment>
           )}
         </UserConsumer>
