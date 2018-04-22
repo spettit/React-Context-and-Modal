@@ -1,10 +1,10 @@
-import React from 'react';
-import { UserConsumer } from './user-context';
-import { ThemeConsumer } from './theme-context';
+import React from "react";
+import { UserConsumer } from "./user-context";
+import { UiConsumer } from "./ui-context";
 
 const Person = props => {
   return (
-    <ThemeConsumer>
+    <UiConsumer>
       {theme => (
         <UserConsumer>
           {user => (
@@ -13,13 +13,13 @@ const Person = props => {
               <p style={theme.state}>I'm the age: {user.state.age}</p>
               <button onClick={user.growAYearOlder}>click</button>
               <button onClick={theme.changeTheme}>theme</button>
+              <button onClick={theme.toggleModal}>modal</button>
             </React.Fragment>
           )}
         </UserConsumer>
       )}
-
-    </ThemeConsumer>
+    </UiConsumer>
   );
 };
 
-export default Person
+export default Person;

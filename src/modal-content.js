@@ -1,25 +1,41 @@
-import React from 'react';
-import { UserConsumer } from './user-context';
-import { ThemeConsumer } from './theme-context';
+import React, { Component } from "react";
+import { UserConsumer } from "./user-context";
+import { UiConsumer } from "./ui-context";
 
-const ModalContent = props => {
+class ModalContent extends Component {
+  render() {
+    return (
+      <UiConsumer>
+        {theme => (
+          <UserConsumer>
+            {user => (
+              <div
+                onClick={theme.toggleModal}
+                className="modal"
+                style={
+                  theme.state.modal ? { display: "flex" } : { display: "none" }
+                }
+              >
+                <div id="modal-content">
+                  <h3 style={{ color: theme.state.color }}>
+                    {user.state.name}'s Modal
+                  </h3>
+                  <button
+                    onClick={e => {
+                      user.changeNameToBill(e);
+                      e.stopPropagation();
+                    }}
+                  >
+                    Yes
+                  </button>
+                </div>
+              </div>
+            )}
+          </UserConsumer>
+        )}
+      </UiConsumer>
+    );
+  }
+}
 
-  return (
-    <ThemeConsumer>
-      {theme => (
-        <UserConsumer>
-          {user => (
-            <div className='modal'>
-              <div id = 'modal-content'>
-              <h3>{user.state.name}'s Modal</h3>
-            </div>
-            </div>
-          )}
-        </UserConsumer>
-      )}
-
-    </ThemeConsumer>
-  );
-};
-
-export default ModalContent
+export default ModalContent;

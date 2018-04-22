@@ -1,17 +1,17 @@
 import React from "react";
 import Person from "./person";
-import { ThemeConsumer } from "./theme-context";
+import { UiConsumer } from "./ui-context";
 
 const Group = () => {
   return (
-    <ThemeConsumer>
+    <UiConsumer>
       {theme => (
         <div>
           <h1 style={theme.state}>Details</h1>
           <Person />
         </div>
       )}
-    </ThemeConsumer>
+    </UiConsumer>
   );
 };
 

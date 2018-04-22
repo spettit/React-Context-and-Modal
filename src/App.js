@@ -2,26 +2,26 @@ import React, { Component } from "react";
 import "./App.css";
 
 import { UserProvider } from "./user-context";
-import { ThemeProvider } from "./theme-context";
+import { UiProvider } from "./ui-context";
 
 import Group from "./group";
 
-import Modal from "./modal";
+import Portal from "./portal";
 import ModalContent from "./modal-content";
 
 class App extends Component {
   render() {
     return (
-      <ThemeProvider>
+      <UiProvider>
         <UserProvider>
           <div className="App">
             <Group />
           </div>
-          <Modal>
+          <Portal>
             <ModalContent />
-          </Modal>
+          </Portal>
         </UserProvider>
-      </ThemeProvider>
+      </UiProvider>
     );
   }
 }
